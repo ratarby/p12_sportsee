@@ -1,0 +1,22 @@
+{
+  "name": "sportsee_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": ".bin/nodemon app/index.js app/index.js",
+    "dev": "node_modules/.bin/nodemon ../backend/app/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "idx": "^3.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
