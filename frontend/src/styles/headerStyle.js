@@ -10,7 +10,7 @@ const Head = styled.header`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 1;
   img {
-    width: 178px;
+    width: 11.25rem;
     margin-right: 150px;
     @media (max-width: 1025px) {
       margin-right: 70px;

@@ -1,7 +1,7 @@
 {
   "name": "sportsee_backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "p12-sportsee-backend",
   "main": "index/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
