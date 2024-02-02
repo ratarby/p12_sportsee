@@ -9,13 +9,18 @@ const Head = styled.header`
 			margin-left: 2rem;
 		}
   h1 {
+    display: flex;
+    width : 100%;
     font-weight: 600;
     font-size:48px;
+    gap : 15px;
     margin-bottom:40px;
   }
+
 `;
 
 const Name = styled.span`
+  gap : 10px;
   color: #ff0000;
 `;
 

@@ -10,13 +10,11 @@ const Nav = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 117px;
-  height: 100vh;
+  height: 1240px;
   background: #020203;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
+  height: 1024px;
 `;
 const Wrapper = styled.div`
   display: flex;

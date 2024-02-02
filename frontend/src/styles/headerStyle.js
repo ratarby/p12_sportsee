@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Head = styled.header`
+const Head = styled.div`
   position: relative;
   display: flex;
   width: 100%;
@@ -11,7 +11,9 @@ const Head = styled.header`
   z-index: 1;
   img {
     width: 11.25rem;
+    margin-top: 18px;
     margin-right: 150px;
+    margin-bottom: 10px;
     @media (max-width: 1025px) {
       margin-right: 70px;
     }

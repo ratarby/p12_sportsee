@@ -1,6 +1,6 @@
 
 class ProfilModel {
-    constructor(mainData, activity, averageSession, performance) {
+    constructor( mainData, activity, averageSessions, performance) {
         this.firstName = mainData.userInfos.firstName;
         this.lastName = mainData.userInfos.lastName;
         this.age = mainData.userInfos.age;
@@ -10,12 +10,9 @@ class ProfilModel {
         this.lipid = mainData.keyData.lipidCount;
         this.calorie = mainData.keyData.calorieCount;
         this.activity = activity;
-        this.averageSession = averageSession;
+        this.averageSession = averageSessions;
         this.performance = performance;
-        
     } 
 }
 
 export default ProfilModel;
-
-
