@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { getProfil } from '../utils/profileRequest';
+import  { getProfil }  from '../utils/profileRequest';
 import KeyData from '../components/KeyData';
 import caloriesIcon from '../assets/caloriesIcon.svg';
 import proteinesIcon from '../assets/proteinesIcon.svg';
@@ -8,32 +8,38 @@ import carbohydrateIcon from '../assets/carbohydrateIcon.svg';
 import lipidIcon from '../assets/lipidIcon.svg';
 import {  Main, Container, Content  } from '../styles/userStyle';
 import UserInfos from '../components/UserInfos';
+import Error from '../components/Error';
+import BarChart from '../components/BarChart';
 
 export default function User() {
   const [profil, setProfile] = useState([]);
-  const { id, userId } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    const fetchedProfile = getProfil(id, userId);
+    const fetchedProfile = getProfil(id);
     if (!fetchedProfile) {
       return alert ('data error');
     }
     setProfile(fetchedProfile);
-  }, [id, userId]);
+  }, [id]);
 
+  if (!profil) {
+    return <Error />;
+  }
 
   return (
     <Main>
-
-
       <Container>
-        <UserInfos  
-          firstName={`${profil.firstName}`} 
+        <UserInfos 
+          key={profil.id} 
+          firstName={profil.firstName} 
         />
           
         <Content>
           <section>
-
+          <BarChart 
+            key={profil.id}   
+            data={profil.activity}/>
           </section>
           <aside>
             <KeyData 

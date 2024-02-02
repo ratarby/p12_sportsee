@@ -28,19 +28,25 @@ const getInfosMocked =  (id) => {
  * @param {string} userId - The ID of the user to retrieve activity for
  * @return {Object} An object containing the activity for the user
  */
-const getActivityMocked =  (userId) => {
+const getActivityMocked =  (id) => {
     try {
         const activity = USER_ACTIVITY.find((activity) => 
-        activity.userId === userId);
+        activity.userId === id);
+
+        for (let i = 0; i < activity.sessions.length; i++) {
+            activity.sessions[i].day = i+1;
+            activity.sessions[i].kilogram = activity.sessions[i].kilogram.toLocaleString();
+            activity.sessions[i].calories = activity.sessions[i].calories.toLocaleString();
+        }
         return activity;
     } catch (error) {
         console.error(error);
     }
 };
 
-const getAverageSessionsMocked =  (userId) => {
+const getAverageSessionsMocked =  (id) => {
     try {
-        const averageSessions = USER_AVERAGE_SESSIONS.find((sessions) => sessions.userId === userId);
+        const averageSessions = USER_AVERAGE_SESSIONS.find((sessions) => sessions.userId === id);
         return averageSessions;
     } catch (error) {
         console.error(error);
@@ -48,9 +54,9 @@ const getAverageSessionsMocked =  (userId) => {
 };
 
 
-const getPerformanceMocked =  (userId) => {
+const getPerformanceMocked =  (id) => {
     try {
-        const performance = USER_PERFORMANCE.find((performance) => performance.userId === userId);
+        const performance = USER_PERFORMANCE.find((performance) => performance.userId === id);
         return performance ;
     } catch (error) {
         console.error(error);
@@ -90,13 +96,12 @@ function getPerformance(id) {
 } 
 
 
-function getProfil(id, userId) {
+function getProfil(id) {
     const idInt = parseInt(id, 10);
-    const userIdInt = parseInt(userId, 10);
     const infos = getInfos(idInt);  
-    const activity = getActivity(userIdInt);
-    const averageSessions = getAverageSessions(userIdInt);
-    const performance = getPerformance(userIdInt);
+    const activity = getActivity(idInt);
+    const averageSessions = getAverageSessions(idInt);
+    const performance = getPerformance(idInt);
     return new ProfilModel (infos , activity, averageSessions, performance);
 }
 export  {getProfil};

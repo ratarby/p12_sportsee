@@ -9,8 +9,8 @@ class ProfilModel {
         this.carbohydrate = mainData.keyData.carbohydrateCount;
         this.lipid = mainData.keyData.lipidCount;
         this.calorie = mainData.keyData.calorieCount;
-        this.activity = activity;
-        this.averageSession = averageSessions;
+        this.activity = activity.sessions;
+        this.averageSession = averageSessions.sessions;
         this.performance = performance;
     } 
 }

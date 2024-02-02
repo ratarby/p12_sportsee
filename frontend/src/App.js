@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from '../../frontend/src/components/Layout/Layout';
 import Home from './pages/Home';
-import Error from './pages/Error';
+import Error from './components/Error';
 import User from './pages/User';
 
 const App = () => {

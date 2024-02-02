@@ -1,6 +1,7 @@
 import React from 'react'
 import { Head, Name } from "../styles/userInfosStyle";
 import { Infos } from "../styles/infosStyle";
+import PropTypes from 'prop-types';
 
 
 
@@ -9,7 +10,7 @@ export default function UserInfos({firstName}) {
     <>
         <Head>
           <Infos>
-            <h1>Bonjour <Name>{`${firstName}`}</Name></h1>
+            <h1>Bonjour <Name>{firstName}</Name></h1>
             <span>Félicitation ! Vous avez explosé vos objectifs hier 👏
             </span>
           </Infos>
@@ -17,4 +18,8 @@ export default function UserInfos({firstName}) {
         
     </>
   )
+}
+
+UserInfos.propTypes = {
+    firstName: PropTypes.string
 }
