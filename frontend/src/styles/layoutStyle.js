@@ -6,14 +6,14 @@ const MainContainer = styled.div`
     flex-direction: column;
     width: 100%;
     max-width: 1440px;
-    height: 1024px;
+    height: auto;
     margin: 50px auto;
 `
 
 const LayoutContainer = styled.div`
     width: 100%;
-    max-width: 1246px;
-    margin-left: 12rem;
+    max-width: 1440px;
+    
 `
 
 export {MainContainer, LayoutContainer}

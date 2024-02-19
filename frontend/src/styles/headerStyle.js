@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Head = styled.div`
+  const Head = styled.header`
   position: relative;
   display: flex;
   width: 100%;
@@ -10,17 +10,11 @@ const Head = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 1;
   img {
-    width: 11.25rem;
-    margin-top: 18px;
+    width: 178px;
     margin-right: 150px;
-    margin-bottom: 10px;
-    @media (max-width: 1025px) {
-      margin-right: 70px;
-    }
-  }
-`;
-const Nav = styled.nav`
-  width: 80%;
+  }`;
+ const Nav = styled.nav`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,5 +25,5 @@ const Nav = styled.nav`
   }
 `;
 
-export { Head, Nav };
+export  {Head,Nav};
 

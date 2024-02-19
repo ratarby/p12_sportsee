@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import  { getProfil }  from '../utils/profileRequest';
+import { getProfil } from '../utils/profileRequest';
+import { Main, Container, Content, BottomChart } from '../styles/userStyle';
 import KeyData from '../components/KeyData';
 import caloriesIcon from '../assets/caloriesIcon.svg';
 import proteinesIcon from '../assets/proteinesIcon.svg';
 import carbohydrateIcon from '../assets/carbohydrateIcon.svg';
 import lipidIcon from '../assets/lipidIcon.svg';
-import {  Main, Container, Content  } from '../styles/userStyle';
 import UserInfos from '../components/UserInfos';
 import Error from '../components/Error';
 import BarChart from '../components/BarChart';
+import AverageSessions from '../components/AverageSessions';
+import Performance from '../components/Performance';
+import ScoreChart from '../components/ScoreChart';
 
 export default function User() {
-  const [profil, setProfile] = useState([]);
+  const [profil, setProfil] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
     const fetchedProfile = getProfil(id);
     if (!fetchedProfile) {
-      return alert ('data error');
+      return alert('data error');
     }
-    setProfile(fetchedProfile);
+    setProfil(fetchedProfile);
   }, [id]);
 
   if (!profil) {
@@ -30,16 +33,31 @@ export default function User() {
   return (
     <Main>
       <Container>
-        <UserInfos 
-          key={profil.id} 
-          firstName={profil.firstName} 
+        <UserInfos
+          key={profil.id}
+          firstName={profil.firstName}
         />
-          
         <Content>
           <section>
-          <BarChart 
-            key={profil.id}   
-            data={profil.activity}/>
+            <BarChart
+              key={profil.id}
+              data={profil.activity}
+            />
+            <BottomChart>
+              < AverageSessions
+                key={profil.id}
+                data={profil.averageSessions}
+              />
+              <Performance
+                key={profil.performance}
+                data={profil.performance}
+              />
+              <ScoreChart
+                key={profil.score}
+                data={profil.score}
+              />
+
+            </BottomChart>
           </section>
           <aside>
             <KeyData 
@@ -63,7 +81,7 @@ export default function User() {
             <KeyData
               key={profil.lipid}
               icon={lipidIcon}
-              infos={profil.protein}
+              infos={`${profil.protein}g`}
               text="Proteines"
             />
           </aside>
@@ -71,6 +89,7 @@ export default function User() {
       </Container>
     </Main>
   );
+  ;
 }
 
 

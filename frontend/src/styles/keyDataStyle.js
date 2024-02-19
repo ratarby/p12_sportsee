@@ -1,21 +1,18 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    padding:2em;
+    display: flex;
+    padding: 2rem;
     width: 258px;
     height: 124px;
     background: #FBFBFB;
     border-radius: 5px;
-    margin-bottom: 32px;
 `
     
 const Infos = styled.div`
     display:flex;
     flex-direction:column;
-    margin-left:24px;
+    margin-left: 24px;
 `
 
 const InfosData = styled.p`
