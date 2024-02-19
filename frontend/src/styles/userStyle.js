@@ -22,8 +22,8 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 align-items: start;
-width: 1150px;
-@media (max-width: 1280px) {
+width: 1126px;
+@media (min-width: 1284px) and (max-width: 1283px) {
   width: 67.3%;
   margin-top: 4.2rem;
 }
@@ -33,12 +33,12 @@ aside {
   justify-content: space-between;
   max-width: 835px;
   flex-direction: column;
-  height: 670px;
+  height: 600px;
   margin: auto;
   margin-left: 2rem;
   @media (max-width: 1361px) {
     display: grid;
-    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-columns: 3fr 3fr 1fr;
     grid-gap: 1rem;
     height: auto;
     margin-left: -0.2rem;
@@ -54,7 +54,7 @@ const BottomChart = styled.div`
   margin-left:0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1.5rem;
+  grid-gap: 1.8rem;
   justify-content: space-between;
 `;
 

@@ -24,7 +24,7 @@ export default function ScoreChart({ data }) {
             minAngle={15}
             label={{fill: 'black', fontSize: 26 , fontWeight: 600, position: 'centerBottom', dx: -13, dy: -18 }}
             // background={{ fill: '#fbfbfb' }}
-            background={{  fill: 'white' }}
+            // background={{  fill: 'white' }}
             clockWise
             dataKey="value"            
             cornerRadius={10}
