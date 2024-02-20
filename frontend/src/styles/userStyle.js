@@ -38,7 +38,7 @@ aside {
   margin-left: 2rem;
   @media (max-width: 1361px) {
     display: grid;
-    grid-template-columns: 3fr 3fr 1fr;
+    grid-template-columns: 3fr 3fr 2fr;
     grid-gap: 1rem;
     height: auto;
     margin-left: -0.2rem;
@@ -54,7 +54,8 @@ const BottomChart = styled.div`
   margin-left:0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1.8rem;
+  grid-gap: 1.9rem;
+  transform: translateX(-.09rem);,
   justify-content: space-between;
 `;
 

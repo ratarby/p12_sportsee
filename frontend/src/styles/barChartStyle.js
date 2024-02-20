@@ -8,10 +8,6 @@ const Wrapper = styled.div`
     background: #FBFBFB;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 	padding: 25px;
-	
-	@media (max-width: 1025px) {
-      padding-left:0;
-    }
 `
 const Head = styled.div`
     display: flex;

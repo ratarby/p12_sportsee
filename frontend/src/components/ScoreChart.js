@@ -2,7 +2,13 @@ import React from "react";
 import { Container, Title, Text, Score } from "../styles/scoreChartStyle";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 
-export default function ScoreChart({ data }) {
+export default function ScoreChart({ userTodayScore }) {
+const data = [
+  {
+    uv: userTodayScore,
+    fill : '#E60000', 
+  },
+]
   return (
     <Container>
       <Title>Score</Title>

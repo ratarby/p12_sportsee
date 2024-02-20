@@ -26,7 +26,7 @@ export default function User() {
     setProfil(fetchedProfile);
   }, [id]);
 
-  if (!profil) {
+  if (!profil ) {
     return <Error />;
   }
 
@@ -38,53 +38,55 @@ export default function User() {
           firstName={profil.firstName}
         />
         <Content>
-          <section>
-            <BarChart
-              key={profil.id}
-              data={profil.activity}
-            />
-            <BottomChart>
-              < AverageSessions
+          <>
+            <section>
+              <BarChart
                 key={profil.id}
-                data={profil.averageSessions}
+                data={profil.activity}
               />
-              <Performance
-                key={profil.performance}
-                data={profil.performance}
-              />
-              <ScoreChart
-                key={profil.score}
-                data={profil.score}
-              />
+              <BottomChart>
+                < AverageSessions
+                  key={profil.id}
+                  data={profil.averageSessions}
+                />
+                <Performance
+                  key={profil.performance}
+                  data={profil.data}
+                />
+                <ScoreChart
+                  key={profil.score}
+                  data={profil.score}
+                />
 
-            </BottomChart>
-          </section>
-          <aside>
-            <KeyData 
-              key={profil.calorie}
-              icon={caloriesIcon}
-              infos={`${profil.calorie}kcal`}
-              text="Calories" 
-            />
-            <KeyData
-              key={profil.protein}
-              icon={proteinesIcon}
-              infos={`${profil.protein}g`}
-              text="Proteines"
-            />
-            <KeyData
-              key={profil.carbohydrate}
-              icon={carbohydrateIcon}
-              infos={`${profil.carbohydrate}g`}
-              text="Glucides"
-            />
-            <KeyData
-              key={profil.lipid}
-              icon={lipidIcon}
-              infos={`${profil.protein}g`}
-              text="Proteines"
-            />
-          </aside>
+              </BottomChart>
+            </section>
+            <aside>
+              <KeyData 
+                key={profil.calorie}
+                icon={caloriesIcon}
+                infos={`${profil.calorie}kcal`}
+                text="Calories" 
+              />
+              <KeyData
+                key={profil.protein}
+                icon={proteinesIcon}
+                infos={`${profil.protein}g`}
+                text="Proteines"
+              />
+              <KeyData
+                key={profil.carbohydrate}
+                icon={carbohydrateIcon}
+                infos={`${profil.carbohydrate}g`}
+                text="Glucides"
+              />
+              <KeyData
+                key={profil.lipid}
+                icon={lipidIcon}
+                infos={`${profil.protein}g`}
+                text="Proteines"
+              />
+            </aside>
+          </>
         </Content>
       </Container>
     </Main>
