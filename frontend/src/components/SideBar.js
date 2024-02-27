@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom";
 import { Container, Nav, Wrapper, NavText } from "../styles/sideBarStyle";
 
 export default function SideBar(){
-    
   return (
     <Container>
       <Nav>

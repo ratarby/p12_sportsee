@@ -15,6 +15,9 @@ const Nav = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   position: fixed;
   height: 1024px;
+  @media (max-width: 1360px) {
+    height: 1138px;
+  }
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -24,6 +27,9 @@ const Wrapper = styled.div`
   position: absolute;
   top: 30%;
   left: 26px;
+  @media (max-width: 1360px) {
+    top: 34%;
+  }
   a {
     display: flex;
     height: 64px;

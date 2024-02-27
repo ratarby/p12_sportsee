@@ -12,14 +12,15 @@ import PropTypes from 'prop-types';
  * @param {object} payload - an object containing values to be displayed
  * @return {JSX.Element} the rendered component or null if 'active' is false
  */
- export default function ActivityTooltip({active, payload}) {
+ export default function ActivityTooltip({ active, payload }) {
     if (active){
     return (
-        <Container>
-            <Text>{payload[0].value}kg</Text>
-            <Text>{payload[1].value}Kcal</Text>
-        </Container>
-    
+        <>
+            <Container>
+                <Text>{payload[0].value}kg</Text>
+                <Text>{payload[1].value}Kcal</Text>
+            </Container>
+        </>
      );
     }
     return null

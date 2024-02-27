@@ -10,13 +10,15 @@ import { Wrapper, Infos, InfosData, InfosText } from "../styles/keyDataStyle";
  * @param {string} text - The text to be displayed
  * @return {JSX.Element} The KeyData component
  */
-export default function KeyData({ icon, infos, text, }) {
-
+export default function KeyData({ icon, userInfos, text }) {
+// console.log('icon :', icon );
+// console.log('infos :', infos );
+// console.log('text :', text );
     return (
         <Wrapper>
             <img src={icon} alt="calories-icon" />
             <Infos>
-                <InfosData>{infos}</InfosData>
+                <InfosData>{userInfos}</InfosData>
                 <InfosText>{text}</InfosText>
             </Infos>
         </Wrapper>);
@@ -24,6 +26,6 @@ export default function KeyData({ icon, infos, text, }) {
 
 KeyData.propTypes = {
     icon: PropTypes.any,
-    info: PropTypes.string,
+    userInfos: PropTypes.string,
     text: PropTypes.string,
 }

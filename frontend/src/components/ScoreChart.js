@@ -2,13 +2,13 @@ import React from "react";
 import { Container, Title, Text, Score } from "../styles/scoreChartStyle";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 
-export default function ScoreChart({ userTodayScore }) {
-const data = [
-  {
-    uv: userTodayScore,
-    fill : '#E60000', 
-  },
-]
+export default function ScoreChart({ userScore }) {
+  // const data = [];
+
+  // let scoreValue = userTodayScore * 100;
+  // data.push({ name: 'score0', value: 100 - scoreValue, display: 'none' });
+  // data.push({ name: 'score1', value: scoreValue });
+
   return (
     <Container>
       <Title>Score</Title>
@@ -24,7 +24,7 @@ const data = [
           startAngle={90}
           endAngle={450}
           barSize={15}
-          data={data}
+          data={ userScore }
         >
           <RadialBar
             minAngle={15}

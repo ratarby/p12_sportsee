@@ -34,28 +34,22 @@ export default function User() {
     <Main>
       <Container>
         <UserInfos
-          key={profil.id}
           firstName={profil.firstName}
         />
         <Content>
-          <>
             <section>
               <BarChart
-                key={profil.id}
-                data={profil.activity}
+                userActivity={profil.userActivity}
               />
               <BottomChart>
                 < AverageSessions
-                  key={profil.id}
-                  data={profil.averageSessions}
+                  userAverageSessions={profil.userAverageSessions}
                 />
                 <Performance
-                  key={profil.performance}
-                  data={profil.data}
+                  userPerformance={profil.userPerformance}
                 />
                 <ScoreChart
-                  key={profil.score}
-                  data={profil.score}
+                  userScore={profil.userScore}
                 />
 
               </BottomChart>
@@ -64,29 +58,28 @@ export default function User() {
               <KeyData 
                 key={profil.calorie}
                 icon={caloriesIcon}
-                infos={`${profil.calorie}kcal`}
-                text="Calories" 
+                userInfos={`${profil.calorie}kcal`}
+                text="Calories"
               />
               <KeyData
                 key={profil.protein}
                 icon={proteinesIcon}
-                infos={`${profil.protein}g`}
+                userInfos={`${profil.protein}g`}
                 text="Proteines"
               />
               <KeyData
                 key={profil.carbohydrate}
                 icon={carbohydrateIcon}
-                infos={`${profil.carbohydrate}g`}
+                userInfos={`${profil.carbohydrate}g`}
                 text="Glucides"
               />
               <KeyData
                 key={profil.lipid}
                 icon={lipidIcon}
-                infos={`${profil.protein}g`}
+                userInfos={`${profil.protein}g`}
                 text="Proteines"
               />
             </aside>
-          </>
         </Content>
       </Container>
     </Main>

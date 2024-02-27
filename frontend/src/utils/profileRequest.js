@@ -34,13 +34,15 @@ function getAverageSessions(id) {
         return undefined;
     }
 }
+
 function getPerformance(id) {
     if (isMockData === true) {
         return getPerformanceMocked(id);
-    } else {
+    } else { 
         return undefined;
-    }
+    } 
 }
+
 
 function getTodayScore(id) {
     if (isMockData === true) {
@@ -53,12 +55,12 @@ function getTodayScore(id) {
 
 function getProfil(id) {
     const idInt = parseInt(id, 10);
-    const infos = getInfos(idInt);
-    const activity = getActivity(idInt);
-    const averageSessions = getAverageSessions(idInt);
-    const performance = getPerformance(idInt);
-    const score = getTodayScore(idInt);
-    return new ProfilModel(infos, activity, averageSessions, performance, score);
+    const userInfos = getInfos(idInt);
+    const userActivity = getActivity(idInt);
+    const userAverageSessions = getAverageSessions(idInt);
+    const userPerformance = getPerformance(idInt);
+    const userScore = getTodayScore(idInt);
+    return new ProfilModel(userInfos, userActivity, userAverageSessions, userPerformance, userScore);
 }
 export { getProfil };
 

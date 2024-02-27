@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 const Main = styled.main`
+  margin: 6rem;
   width: 100%;
   max-width: 1240px;
   margin-left: 14rem;
-  @media screen and (max-width: 1250px) {
+  @media  (max-width: 1250px) {
+    margin-top: 9.8vh;
     grid-gap: 1rem;
   }
 `;
@@ -12,7 +14,7 @@ const Container = styled.div`
   max-width: 1240px;
   width: 100%;
   margin: auto;
-  margin-top: 2%;
+  margin-top: 10%;
   @media (max-width: 1430px){
 }
 `;
@@ -25,7 +27,6 @@ align-items: start;
 width: 1126px;
 @media (min-width: 1284px) and (max-width: 1283px) {
   width: 67.3%;
-  margin-top: 4.2rem;
 }
 aside {
   display: flex;

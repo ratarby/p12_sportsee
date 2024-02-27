@@ -7,14 +7,16 @@ import { Container, Title } from "../styles/userAverageSessionStyle";
 import CustomCursor from './CustomCursor';
 
 
-export default function AverageSessions({ data }) {
+export default function AverageSessions({ userAverageSessions }) {
+    // console.log('userAverageSessions :', userAverageSessions);
     return (
         <Container>
             <Title>Durée moyenne des sessions</Title>
             <ResponsiveContainer width="100%" height="100%">
             
                 <LineChart
-                    height={263} data={data}
+                    height={263} 
+                    data={userAverageSessions}
                     margin={{ top: 0, right: 0, left: -5, bottom: 5 }}>
                     <CartesianGrid vertical={false} horizontal={false}  />
                     <XAxis className=''
@@ -32,7 +34,9 @@ export default function AverageSessions({ data }) {
                         domain={['dataMin -20', 'dataMax + 30']}
                         hide />
                         
-                    <Tooltip content={<AvSessionsTooltip />} cursor={<CustomCursor />} />
+                    <Tooltip 
+                        content={<AvSessionsTooltip />} 
+                        cursor={<CustomCursor />} />
                     <Line
                         type="natural"
                         dataKey={'sessionLength'}

@@ -8,8 +8,7 @@ import ActivityTooltip from './ActivityTooltip';
 
 
 
-export default function BarCharts({ data }) {
-
+export default function BarCharts({ userActivity }) {
     return (
         <Wrapper>
             <Head>
@@ -26,7 +25,7 @@ export default function BarCharts({ data }) {
                 </Legend>
             </Head>
             <ResponsiveContainer width="100%" height={200} >
-                <BarChart data={data} barGap={8} barCategoryGap={1}>
+                <BarChart data={userActivity} barGap={8} barCategoryGap={1}>
                     <CartesianGrid vertical={false} strokeDasharray="1 1" />
                     <XAxis
                         dataKey="day"

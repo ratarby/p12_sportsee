@@ -2,12 +2,14 @@ import { USER_AVERAGE_SESSIONS } from "../../mock/dataMocked";
 
 export const getAverageSessionsMocked = (id) => {
     try {
-        const averageSessions = USER_AVERAGE_SESSIONS.find((sessions) => sessions.userId === id);
+        const userAverageSessions = USER_AVERAGE_SESSIONS.find((session) => session.userId === id);
 
-        averageSessions.sessions.forEach((session, i) => {
+        userAverageSessions.sessions.forEach((session, i) => {
             session.day = ["L", "M", "M", "J", "V", "S", "D"][i];
         });
-        return averageSessions;
+
+        // console.log('userAverageSessions', userAverageSessions.sessions);
+        return userAverageSessions;
     } catch (error) {
         console.error(error);
     }

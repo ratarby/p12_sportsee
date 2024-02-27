@@ -1,18 +1,19 @@
 
 class ProfilModel {
-    constructor( mainData, activity, averageSessions, data) {
-        this.firstName = mainData.userInfos.firstName;
-        this.lastName = mainData.userInfos.lastName;
-        this.age = mainData.userInfos.age;
-        this.score = mainData.score;
-        this.protein = mainData.keyData.proteinCount;
-        this.carbohydrate = mainData.keyData.carbohydrateCount;
-        this.lipid = mainData.keyData.lipidCount;
-        this.calorie = mainData.keyData.calorieCount;
-        this.activity = activity.sessions;
-        this.averageSessions = averageSessions.sessions;
-        this.performance = performance.data;
-    } 
+    constructor({ userInfos, todayScore, score, keyData }, userActivity, userAverageSessions, userPerformance ) {
+        const { proteinCount, carbohydrateCount, lipidCount, calorieCount } = keyData;
+
+        this.firstName = userInfos.firstName;
+        this.protein = proteinCount;
+        this.carbohydrate = carbohydrateCount;
+        this.lipid = lipidCount;
+        this.calorie = calorieCount;
+        this.userActivity = userActivity.sessions;
+        this.userAverageSessions = userAverageSessions.sessions;
+        this.userPerformance = userPerformance.data || userPerformance;
+        this.userScore = score || todayScore;
+        
+    }
 }
 
 export default ProfilModel;
