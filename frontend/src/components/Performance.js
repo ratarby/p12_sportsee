@@ -11,18 +11,21 @@ export default function Performance({ userPerformance }) {
                 <RadarChart
                     cx="50%"
                     cy="50%"
-                    outerRadius="65%"
+                    outerRadius="75%"
                     width={258}
                     height={263}
                     data={userPerformance}
                 >
-                    <PolarGrid gridType='polygon' />
+                    <PolarGrid 
+                        gridType='polygon' 
+                        />
                     <PolarAngleAxis 
-                    dataKey="kind" 
-                    stroke='white' 
-                    tickLine={false}  
-                    axisLine={false} 
-                    tick={{ fontSize: 10,  }} />
+                        dataKey="kind" 
+                        stroke='white' 
+                        tickLine={false}  
+                        axisLine={false} 
+                        tick={{ fontSize: 10 , dy:3, dx:-0.1, fontWeight: 500 }} 
+                        />
                     <Radar
                         dataKey="value"
                         stroke='#FF0101'
