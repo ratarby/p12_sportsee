@@ -6,8 +6,8 @@ const Main = styled.main`
   max-width: 1240px;
   margin-left: 14rem;
   @media  (max-width: 1361px) {
-      margin-left: 14rem;
-    margin-top: 15vh;
+    margin-top:8rem;
+    margin-left: 14rem;
     grid-gap: 1rem;
   }
 `;
@@ -16,9 +16,6 @@ const Container = styled.div`
   width: 100%;
   margin: auto;
   margin-top:10vh;
-  @media (max-width: 1361px){
-    margin-top: 14vh;
-}
 `;
 
 const Content = styled.div`
