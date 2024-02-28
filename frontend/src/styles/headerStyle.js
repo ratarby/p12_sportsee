@@ -10,7 +10,7 @@ import styled from "styled-components";
   padding: 0 87px 0 29px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 1;
-  @media (max-width: 1360px) {
+  @media (max-width: 1361px) {
     width: 1182px;
   }
   img {
@@ -28,7 +28,7 @@ const Nav = styled.nav`
     font-weight: 500;
     font-size: 24px;
   }
-  @media (max-width: 1360px) {
+  @media (max-width: 1361px) {
     transform: translateX(-40px);
   }
 `;

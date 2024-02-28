@@ -9,7 +9,7 @@ export default function Performance({ userPerformance }) {
         <Container>
             <ResponsiveContainer width="100%" height="100%">
                 <RadarChart
-                    cx="48%"
+                    cx="50%"
                     cy="50%"
                     outerRadius="65%"
                     width={258}

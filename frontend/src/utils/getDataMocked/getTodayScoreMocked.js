@@ -15,6 +15,7 @@ export const getTodayScoreMocked = (id) => {
                 { name: 'score1', value: 100 - (100 - ((userScore.todayScore || userScore.score) * 100)) },
             ];
         }
+        
         //score
         if (userScore.todayScore >= 1 || userScore.score <= 1) {
             userScore.score = [

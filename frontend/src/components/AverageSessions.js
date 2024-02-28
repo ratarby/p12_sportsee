@@ -13,11 +13,10 @@ export default function AverageSessions({ userAverageSessions }) {
         <Container>
             <Title>Durée moyenne des sessions</Title>
             <ResponsiveContainer width="100%" height="100%">
-            
                 <LineChart
                     height={263} 
                     data={userAverageSessions}
-                    margin={{ top: 0, right: 0, left: -5, bottom: 5 }}>
+                    margin={{ top: 0, right: 0, left: -5, bottom: 10 }}>
                     <CartesianGrid vertical={false} horizontal={false}  />
                     <XAxis className=''
                         type="category"

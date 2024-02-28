@@ -3,23 +3,17 @@ import { Container, Title, Text, Score } from "../styles/scoreChartStyle";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 
 export default function ScoreChart({ userScore }) {
-  // const data = [];
-
-  // let scoreValue = userTodayScore * 100;
-  // data.push({ name: 'score0', value: 100 - scoreValue, display: 'none' });
-  // data.push({ name: 'score1', value: scoreValue });
-
   return (
     <Container>
       <Title>Score</Title>
-      <ResponsiveContainer width='100%' height={250}>
+      <ResponsiveContainer width='100%' height='100%'>
         <RadialBarChart
           width={258}
           height={263}
           cx="50%"
           cy="55.6%"
           
-          innerRadius={20}
+          innerRadius={15}
           outerRadius={150}
           startAngle={90}
           endAngle={450}
@@ -40,7 +34,6 @@ export default function ScoreChart({ userScore }) {
         </RadialBarChart>
       </ResponsiveContainer>
         <Text> 
-        
           <Score>%</Score> 
         <br/>de votre<br/> objectif 
         </Text>

@@ -7,6 +7,11 @@ const Container = styled.div`
 	background: #282D30;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 	border-radius: 5px;
+
+	@media (max-width: 1361px) {
+		width: 258px;
+		height: 238px;
+	}
 `
 
 export {Container}

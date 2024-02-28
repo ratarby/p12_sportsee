@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
-const DisplayNone = styled.div`
-    display: none;
-    
-`
+
 
 const MainContainer = styled.div`
     display: flex;
@@ -12,7 +9,7 @@ const MainContainer = styled.div`
     width: 100%;
     max-width: 1440px;
     height: auto;
-    margin: 3rem auto;
+    margin: 0 auto;
 `
 
 const LayoutContainer = styled.div`
@@ -21,4 +18,4 @@ const LayoutContainer = styled.div`
     
 `
 
-export {MainContainer, LayoutContainer , DisplayNone}
+export {MainContainer, LayoutContainer }

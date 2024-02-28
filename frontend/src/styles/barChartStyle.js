@@ -8,12 +8,21 @@ const Wrapper = styled.div`
     background: #FBFBFB;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 	padding: 25px;
+	@media (max-width: 1361px) {
+		padding: 20px;
+		height: 234px;
+		margin-top:-1.5rem;
+		margin-bottom: 1.5rem;
+	}
 `
 const Head = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 2.5rem;
     margin-right: 1.5rem;
+	@media (max-width: 1361px) {
+		margin-bottom: 1rem;
+	}
 	`
 
 const Title= styled.h2`

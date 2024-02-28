@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 
 export default function UserInfos({firstName}) {
   return (
-    <>
         <Head>
           <Infos>
             <h1>Bonjour <Name>{firstName}</Name></h1>
@@ -15,8 +14,6 @@ export default function UserInfos({firstName}) {
             </span>
           </Infos>
         </Head>
-        
-    </>
   )
 }
 

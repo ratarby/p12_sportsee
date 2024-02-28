@@ -10,6 +10,10 @@ const Container = styled.div`
   background: #ff0000;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
+  @media (max-width: 1361px) {
+    width: 258px;
+    height: 238px;
+  }
 `;
 
 const Title = styled.h2`

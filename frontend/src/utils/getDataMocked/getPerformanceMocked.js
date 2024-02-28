@@ -4,9 +4,14 @@ export const getPerformanceMocked = (id) => {
     try {
         const userPerformance = USER_PERFORMANCE.find((el) => el.userId === id);
 
-        userPerformance.data.forEach((data, i) => {
-            data.kind = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"][i];
-        });
+        performances(id);
+        function performances() {
+            userPerformance.data.forEach((data, i) => {
+                data.kind = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"][i];
+            });
+            userPerformance.data.reverse();
+        }
+
         // console.log(userPerformance.data);
         return userPerformance.data;
     } catch (error) {

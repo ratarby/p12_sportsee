@@ -15,8 +15,8 @@ const Nav = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   position: fixed;
   height: 1024px;
-  @media (max-width: 1360px) {
-    height: 1138px;
+  @media (max-width: 1361px) {
+    height: 768px;
   }
 `;
 const Wrapper = styled.div`
@@ -27,8 +27,8 @@ const Wrapper = styled.div`
   position: absolute;
   top: 30%;
   left: 26px;
-  @media (max-width: 1360px) {
-    top: 34%;
+  @media (max-width: 1361px) {
+    top: 29.5%;
   }
   a {
     display: flex;
@@ -50,6 +50,9 @@ const NavText = styled.p`
   line-height: 24px;
   color: white;
   margin: auto;
+  @media (max-width: 1361px) {
+    bottom: 34px;
+  }
 `;
 
 export {Container, Nav, Wrapper, NavText }

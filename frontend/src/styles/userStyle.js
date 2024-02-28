@@ -5,7 +5,7 @@ const Main = styled.main`
   width: 100%;
   max-width: 1240px;
   margin-left: 14rem;
-  @media  (max-width: 1250px) {
+  @media  (max-width: 1361px) {
     margin-top: 9.8vh;
     grid-gap: 1rem;
   }
@@ -14,8 +14,9 @@ const Container = styled.div`
   max-width: 1240px;
   width: 100%;
   margin: auto;
-  margin-top: 10%;
-  @media (max-width: 1430px){
+  margin-top:10vh;
+  @media (max-width: 1361px){
+    margin-top: 10vh;
 }
 `;
 
@@ -39,15 +40,12 @@ aside {
   margin-left: 2rem;
   @media (max-width: 1361px) {
     display: grid;
-    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1rem;
-    height: auto;
     margin-left: -0.2rem;
-    margin-top: 1rem;
+    margin-top: .5rem;
   }
-
 }
-
 `;
 
 const BottomChart = styled.div`
@@ -56,7 +54,6 @@ const BottomChart = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1.9rem;
-  transform: translateX(-.09rem);,
   justify-content: space-between;
 `;
 
