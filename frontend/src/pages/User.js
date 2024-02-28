@@ -51,7 +51,6 @@ export default function User() {
                 <ScoreChart
                   userScore={profil.userScore}
                 />
-
               </BottomChart>
             </section>
             <aside>

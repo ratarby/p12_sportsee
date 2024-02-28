@@ -6,10 +6,10 @@ const Head = styled.header`
   margin-bottom: 40px;
   font-weight: 400;
   font-size: 18px;
-  @media screen and (max-width: 1361px){
+  @media (max-width: 1361px){
     width: 835px;
     font-size: 16px;
-    margin-bottom: 40px; 
+    margin-bottom: 15px; 
   }
 
   h1 {
