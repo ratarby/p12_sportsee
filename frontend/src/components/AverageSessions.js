@@ -5,10 +5,10 @@ import {
 import AvSessionsTooltip from './AvSessionsTooltip';
 import { Container, Title } from "../styles/userAverageSessionStyle";
 import CustomCursor from './CustomCursor';
+import PropTypes from 'prop-types';
 
 
 export default function AverageSessions({ userAverageSessions }) {
-    // console.log('userAverageSessions :', userAverageSessions);
     return (
         <Container>
             <Title>Durée moyenne des sessions</Title>
@@ -57,5 +57,7 @@ export default function AverageSessions({ userAverageSessions }) {
     );
 }
 
-
+AverageSessions.propTypes = {
+    userAverageSessions: PropTypes.array
+}
 

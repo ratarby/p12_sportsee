@@ -18,3 +18,4 @@ export const getActivityMocked = (id) => {
         console.error(error);
     }
 };
+

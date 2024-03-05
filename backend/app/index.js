@@ -9,4 +9,11 @@ const port = 4000
 
 app.use(router)
 
-app.listen(port, () => console.log(`Magic happens on port ${port}`))
+//test
+// app.get('/backend/app/data.js', (req, res) => {
+//     res.sendFile(__dirname + '/data.js')
+// })
+
+// app.listen(port, () => console.log(`Magic happens on port : http://localhost:${port}/backend/app/data.js`))
+
+app.listen(port, () => console.log(`Magic happens on port : http://localhost:${port}`))

@@ -5,6 +5,7 @@ import {
 } from "recharts";
 import { Wrapper, Head, Title, Text, Icon, Legend, Info } from "../styles/barChartStyle";
 import ActivityTooltip from './ActivityTooltip';
+import { PropTypes } from 'prop-types';
 
 
 
@@ -68,3 +69,8 @@ export default function BarCharts({ userActivity }) {
         </Wrapper>
     )
 }
+
+BarCharts.propTypes = {
+    userActivity: PropTypes.array
+}
+

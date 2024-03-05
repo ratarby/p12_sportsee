@@ -11,9 +11,6 @@ import { Wrapper, Infos, InfosData, InfosText } from "../styles/keyDataStyle";
  * @return {JSX.Element} The KeyData component
  */
 export default function KeyData({ icon, userInfos, text }) {
-// console.log('icon :', icon );
-// console.log('infos :', infos );
-// console.log('text :', text );
     return (
         <Wrapper>
             <img src={icon} alt="calories-icon" />

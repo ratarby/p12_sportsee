@@ -10,6 +10,7 @@ export const getAverageSessionsMocked = (id) => {
 
         // console.log('userAverageSessions', userAverageSessions.sessions);
         return userAverageSessions;
+        
     } catch (error) {
         console.error(error);
     }
