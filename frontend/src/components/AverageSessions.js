@@ -5,7 +5,6 @@ import {
 import AvSessionsTooltip from './AvSessionsTooltip';
 import { Container, Title } from "../styles/userAverageSessionStyle";
 import CustomCursor from './CustomCursor';
-import PropTypes from 'prop-types';
 
 
 export default function AverageSessions({ userAverageSessions }) {
@@ -57,7 +56,5 @@ export default function AverageSessions({ userAverageSessions }) {
     );
 }
 
-AverageSessions.propTypes = {
-    userAverageSessions: PropTypes.array
-}
+
 

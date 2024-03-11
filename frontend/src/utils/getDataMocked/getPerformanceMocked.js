@@ -4,6 +4,10 @@ export const getPerformanceMocked = (id) => {
     try {
         const userPerformance = USER_PERFORMANCE.find((el) => el.userId === id);
 
+        if (!userPerformance || userPerformance.data === undefined) {
+            return undefined;
+        }
+
         performances(id);
         function performances() {
             userPerformance.data.forEach((data, i) => {

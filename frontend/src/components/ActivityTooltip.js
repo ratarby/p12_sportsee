@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Text } from "../styles/activityToolTypeStyle";
-import PropTypes from 'prop-types';
 
 
 
@@ -26,8 +25,5 @@ export default function ActivityTooltip({ active, payload }) {
     return null
 }
 
-ActivityTooltip.propTypes = {
-    active: PropTypes.bool,
-    payload: PropTypes.array,
-};
+
 

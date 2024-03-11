@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Wrapper, Infos, InfosData, InfosText } from "../styles/keyDataStyle";
 
 /**
@@ -21,8 +20,4 @@ export default function KeyData({ icon, userInfos, text }) {
         </Wrapper>);
 }
 
-KeyData.propTypes = {
-    icon: PropTypes.any,
-    userInfos: PropTypes.string,
-    text: PropTypes.string,
-}
+

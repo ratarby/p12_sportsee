@@ -9,6 +9,7 @@ class ProfilModel {
         this.lipid = lipidCount;
         this.calorie = calorieCount;
         this.userActivity = userActivity.sessions;
+
         this.userAverageSessions = userAverageSessions.sessions;
         this.userPerformance = userPerformance.data || userPerformance;
         this.userScore = score || todayScore;

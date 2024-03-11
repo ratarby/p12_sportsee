@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: `http://localhost:4000/`
+    baseURL: `http://localhost:3000/`
 });
 console.log(api);
 /**
@@ -11,7 +11,7 @@ console.log(api);
  */
 export const getUserActivity = async (id) => {
     try {
-        const res = await api.get(`http://localhost:4000/user/${id}/activity`);
+        const res = await api.get(`http://localhost:3000/user/:${id}/activity`);
         return res.data;
     } catch (e) {
         console.log(e);
@@ -26,8 +26,8 @@ export const getUserActivity = async (id) => {
 
 export const getUserInfos = async (id) => {
     try {
-        const res = await api.get(`http://localhost:4000/user/${id}`);
-        return res.data;
+        const res = await fetch(`http://localhost:3000/user/${id}`);
+        return res.json();
     } catch (e) {
         console.log(e);
     }
@@ -41,10 +41,10 @@ export const getUserInfos = async (id) => {
 
 export const getUserPerformance = async (id) => {
     try {
-        const res = await api.get(`http://localhost:4000/user/${id}/performance`);
+        const res = await api.get(`http://localhost:3000/user/${id}/performance`);
         return res.data;
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
     }
 };
 /**
@@ -55,7 +55,7 @@ export const getUserPerformance = async (id) => {
 
 export const getUserAverageSessions = async (id) => {
     try {
-        const res = await api.get(`http://localhost:4000/user/${id}/average-sessions`);
+        const res = await axios.get(`http://localhost:3000/user/${id}/average-sessions`);
         return res.data;
     } catch (e) {
         console.log(e);

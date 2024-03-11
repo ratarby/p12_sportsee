@@ -8,6 +8,10 @@ export const getTodayScoreMocked = (id) => {
     try {
         const userScore = USER_MAIN_DATA.find((el) => el.id === id);
 
+        if (!userScore) {
+            return undefined;
+        }
+
         //todayScore
         if (userScore.todayScore <= 1 || userScore.score >= 1) {
             userScore.score = [

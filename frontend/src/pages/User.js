@@ -20,13 +20,14 @@ export default function User() {
 
   useEffect(() => {
     const fetchedProfile = getProfil(id);
-    if (!fetchedProfile) {
-      return alert('data error');
-    }
+    console.log(fetchedProfile);
+    // if (!fetchedProfile) {
+    //   return alert('data error');
+    // }
     setProfil(fetchedProfile);
   }, [id]);
 
-  if (!profil ) {
+  if (profil === null || profil === '' ) {
     return <Error />;
   }
 
@@ -83,8 +84,10 @@ export default function User() {
       </Container>
     </Main>
   );
-  ;
 }
+
+// loader function
+
 
 
 

@@ -3,7 +3,6 @@ import {
     Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer
 } from 'recharts';
 import { Container } from '../styles/performanceStyle';
-import PropTypes from 'prop-types';
 
 export default function Performance({ userPerformance }) {
     return (
@@ -39,6 +38,3 @@ export default function Performance({ userPerformance }) {
     );
 }
 
-Performance.propTypes = {
-    userPerformance: PropTypes.array
-}

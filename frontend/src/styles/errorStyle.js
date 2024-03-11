@@ -1,25 +1,29 @@
 import styled from "styled-components";
 
 const Main = styled.main`
-  margin: 10rem 20rem 20rem;
-  @media (max-width: 1025px) {
-    margin: 1.5rem;
+  margin-top: 14rem;
+  margin-left: 6rem;
+  @media (max-width: 1361px) {
+    width : 1024px;
+    margin-top: 14rem ;
+    margin-left: 7.8rem;
   }
   a{
-      margin-top: 4rem;
+      margin-top: 7rem;
       display:flex;
       flex-direction:column;
       text-align: center;
       font-weight: bold;
       font-size: 1.5rem;
-      @media (max-width: 1025px) {
-        font-size: 1rem;
+      @media (max-width: 1361px) {
+        width: 1024px;
+        font-size: 1.3rem;
       }
   }
   p{
       font-size: 2.5rem;
       text-align: center;
-      @media (max-width: 1025px) {
+      @media (max-width: 1361px) {
         font-size: 1.5rem;
       }
   }
@@ -29,7 +33,7 @@ color: red;
 font-size: 10rem;
 text-align: center;
 margin-bottom: 5rem;
-@media (max-width: 1025px) {
+@media (max-width: 1361px) {
     font-size: 5rem;
   }
 `

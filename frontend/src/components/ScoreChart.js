@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Title, Text, Score } from "../styles/scoreChartStyle";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
-import PropTypes from 'prop-types';
 
 export default function ScoreChart({ userScore }) {
   return (
@@ -42,7 +41,5 @@ export default function ScoreChart({ userScore }) {
   );
 }
 
-ScoreChart.propTypes = {
-  userScore: PropTypes.array
-}
+
 

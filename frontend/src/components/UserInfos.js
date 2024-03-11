@@ -1,7 +1,6 @@
 import React from 'react'
 import { Head, Name } from "../styles/userInfosStyle";
 import { Infos } from "../styles/infosStyle";
-import PropTypes from 'prop-types';
 
 
 
@@ -17,6 +16,3 @@ export default function UserInfos({firstName}) {
   )
 }
 
-UserInfos.propTypes = {
-    firstName: PropTypes.string
-}

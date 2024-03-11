@@ -1,6 +1,5 @@
 import React from 'react';
 import { Rectangle } from 'recharts';
-import PropTypes from 'prop-types';
 
 export default function CustomCursor(props) {
     const { points, width } = props;
@@ -19,7 +18,3 @@ export default function CustomCursor(props) {
     );
 }
 
-CustomCursor.propTypes = {
-    points: PropTypes.array,
-    width: PropTypes.number
-}
