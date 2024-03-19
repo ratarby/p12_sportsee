@@ -13,26 +13,29 @@ export const getTodayScoreMocked = (id) => {
         }
 
         //todayScore
+        return Score(userScore);
+
+    } catch (error) {
+        console.error(error);
+    }
+
+    function Score(userScore) {
         if (userScore.todayScore <= 1 || userScore.score >= 1) {
             userScore.score = [
                 { name: 'score0', value: 100 - (userScore.todayScore || userScore.todayScore) * 100, display: 'none' },
                 { name: 'score1', value: 100 - (100 - ((userScore.todayScore || userScore.score) * 100)) },
             ];
         }
-        
+
         //score
         if (userScore.todayScore >= 1 || userScore.score <= 1) {
             userScore.score = [
                 { name: 'score0', value: 100 - (userScore.score || userScore.score) * 100, display: 'none' },
-                { name: 'score1', value: 100 - (100 - ((userScore.todayScore || userScore.score) * 100 )) },
+                { name: 'score1', value: 100 - (100 - ((userScore.todayScore || userScore.score) * 100)) },
             ];
         }
 
-        // console.log(userScore);
         return userScore;
-
-    } catch (error) {
-        console.error(error);
     }
 };
 

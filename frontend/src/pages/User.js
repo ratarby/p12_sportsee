@@ -8,85 +8,75 @@ import proteinesIcon from '../assets/proteinesIcon.svg';
 import carbohydrateIcon from '../assets/carbohydrateIcon.svg';
 import lipidIcon from '../assets/lipidIcon.svg';
 import UserInfos from '../components/UserInfos';
-import Error from '../components/Error';
+import Error from '../pages/Error';
 import BarChart from '../components/BarChart';
 import AverageSessions from '../components/AverageSessions';
 import Performance from '../components/Performance';
 import ScoreChart from '../components/ScoreChart';
 
 export default function User() {
-  const [profil, setProfil] = useState([]);
+  const [profile, setProfile] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchedProfile = getProfil(id);
-    console.log(fetchedProfile);
-    // if (!fetchedProfile) {
-    //   return alert('data error');
-    // }
-    setProfil(fetchedProfile);
+    
+    const fetchProfile = async (id) => {
+      const profileData = await getProfil(id);
+      setProfile(profileData);
+    };
+      fetchProfile(id);
   }, [id]);
+    
 
-  if (profil === null || profil === '' ) {
+  if (!profile) {
     return <Error />;
   }
 
   return (
     <Main>
       <Container>
-        <UserInfos
-          firstName={profil.firstName}
-        />
+        <UserInfos firstName={profile.firstName} />
         <Content>
-            <section>
-              <BarChart
-                userActivity={profil.userActivity}
-              />
-              <BottomChart>
-                < AverageSessions
-                  userAverageSessions={profil.userAverageSessions}
-                />
-                <Performance
-                  userPerformance={profil.userPerformance}
-                />
-                <ScoreChart
-                  userScore={profil.userScore}
-                />
-              </BottomChart>
-            </section>
-            <aside>
-              <KeyData 
-                key={profil.calorie}
-                icon={caloriesIcon}
-                userInfos={`${profil.calorie}kcal`}
-                text="Calories"
-              />
-              <KeyData
-                key={profil.protein}
-                icon={proteinesIcon}
-                userInfos={`${profil.protein}g`}
-                text="Proteines"
-              />
-              <KeyData
-                key={profil.carbohydrate}
-                icon={carbohydrateIcon}
-                userInfos={`${profil.carbohydrate}g`}
-                text="Glucides"
-              />
-              <KeyData
-                key={profil.lipid}
-                icon={lipidIcon}
-                userInfos={`${profil.protein}g`}
-                text="Proteines"
-              />
-            </aside>
+          <section>
+            <BarChart userActivity={profile.userActivity} />
+            <BottomChart>
+              <AverageSessions userAverageSessions={profile.userAverageSessions} />
+              <Performance userPerformance={profile.userPerformance} />
+              <ScoreChart userScore={profile.userScore}  />
+            </BottomChart>
+          </section>
+          <aside>
+            <KeyData
+              key={profile.calorie}
+              icon={caloriesIcon}
+              userInfos={`${profile.calorie}kcal`}
+              text="Calories"
+            />
+            <KeyData
+              key={profile.protein}
+              icon={proteinesIcon}
+              userInfos={`${profile.protein}g`}
+              text="Protein"
+            />
+            <KeyData
+              key={profile.carbohydrate}
+              icon={carbohydrateIcon}
+              userInfos={`${profile.carbohydrate}g`}
+              text="Carbohydrates"
+            />
+            <KeyData
+              key={profile.lipid}
+              icon={lipidIcon}
+              userInfos={`${profile.lipid}g`}
+              text="Lipids"
+            />
+          </aside>
         </Content>
       </Container>
     </Main>
   );
 }
 
-// loader function
 
 
 

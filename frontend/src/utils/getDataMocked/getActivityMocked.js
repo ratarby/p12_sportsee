@@ -8,9 +8,8 @@ export const getActivityMocked = (id) => {
             return undefined;
         }
         
-
         userActivity.sessions.forEach((session, i) => {
-            session.day = i + 1;
+            session.day =  i + 1;
         });
         
         // console.log('userActivity :',userActivity.sessions);
