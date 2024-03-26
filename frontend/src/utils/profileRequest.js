@@ -3,25 +3,29 @@ import { getInfosMocked } from "./getDataMocked/getInfosMocked";
 import { getActivityMocked } from "./getDataMocked/getActivityMocked";
 import { getAverageSessionsMocked } from "./getDataMocked/getAverageSessionsMocked";
 import { getPerformanceMocked } from "./getDataMocked/getPerformanceMocked";
-import { getTodayScoreMocked } from "./getDataMocked/getTodayScoreMocked";
 import axios from "axios";
 
 
 // false = api call , true = mock data
-let isMockData = false;
+let isMockData = true;
 
 
 
 async function getInfos(id) {
     let result;
 
+
+
     if (isMockData === true) {
-        result = getInfosMocked(id);
+        return getInfosMocked(id);
     } else {
         // Endpoint
         const dataResponse = await axios.get(`http://localhost:3000/user/${id}`);
         if (dataResponse.status === 200) {
-            result = dataResponse.data.data;
+            result = dataResponse.data.data ;
+            // display user infos from front end 
+            
+            // display user infos from backend
         }
     }
     return result === undefined ? null : result;
@@ -92,52 +96,6 @@ async function getPerformance(id) {
 }
 
 
-
-async function getTodayScore(id) {
-    let result;
-
-    if (isMockData === true) {
-        return getTodayScoreMocked(id);
-    } else {
-        const dataResponse = await axios.get(`http://localhost:3000/user/${id}`);
-        if (dataResponse.status === 200) {
-            result = dataResponse.data.data;
-            console.log('result : ', result);
-            const userScore = result;
-            console.log('userScore.score : ', userScore.score);
-            
-            result = Score(userScore);
-            return result;
-        }
-        function Score(userScore) {
-            if (userScore.todayScore <= 1 || userScore.score >= 1) {
-                userScore.score = [
-                    { name: 'score0', value: 100 - (userScore.todayScore || userScore.todayScore) * 100, display: 'none' },
-                    { name: 'score1', value: 100 - (100 - ((userScore.todayScore || userScore.score) * 100)) },
-                ];
-            }
-    
-            //score
-            if (userScore.todayScore >= 1 || userScore.score <= 1) {
-                userScore.score = [
-                    { name: 'score0', value: 100 - (userScore.score || userScore.score) * 100, display: 'none' },
-                    { name: 'score1', value: 100 - (100 - ((userScore.todayScore || userScore.score) * 100)) },
-                ];
-            }
-    
-            return userScore;
-        }
-    }
-
-    // console.log("result : ", result);
-    return result === undefined ? null : result;
-}
-
-
-
-
-
-
 async function getProfil(id) {
     const idInt = parseInt(id, 10);
     // console.log('idInt :', idInt);
@@ -146,20 +104,16 @@ async function getProfil(id) {
     const userActivity = await getActivity(idInt)
     // console.log('userActivity :', userActivity);
     const userAverageSessions = await getAverageSessions(idInt);
-    // console.log('userAverageSessions :', userAverageSessions);
     const userPerformance = await getPerformance(idInt);
-    // console.log('userPerformance :', userPerformance);
-    const userScore = await getTodayScore(idInt);
-    // console.log('userScore :', userScore);
 
 
 
-    if (userInfos === null || userActivity === null || userAverageSessions === null || userPerformance === null || userScore === null) {
+    if (userInfos === null || userActivity === null || userAverageSessions === null || userPerformance === null   ) {
         return null;
     }
 
 
-    return new ProfilModel(userInfos, userActivity, userAverageSessions, userPerformance, userScore);
+    return new ProfilModel(userInfos, userActivity, userAverageSessions, userPerformance);
 }
 export { getProfil };
 

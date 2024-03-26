@@ -13,6 +13,7 @@ import BarChart from '../components/BarChart';
 import AverageSessions from '../components/AverageSessions';
 import Performance from '../components/Performance';
 import ScoreChart from '../components/ScoreChart';
+import ProfilModel from '../utils/ProfilModel';
 
 export default function User() {
   const [profile, setProfile] = useState(null);
@@ -42,7 +43,7 @@ export default function User() {
             <BottomChart>
               <AverageSessions userAverageSessions={profile.userAverageSessions} />
               <Performance userPerformance={profile.userPerformance} />
-              <ScoreChart userScore={profile.userScore}  />
+              <ScoreChart userScore={ ProfilModel.userScore }  />
             </BottomChart>
           </section>
           <aside>

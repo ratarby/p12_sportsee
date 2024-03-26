@@ -1,19 +1,19 @@
 
 class ProfilModel {
-    constructor({ userInfos, todayScore, score, keyData }, userActivity, userAverageSessions, userPerformance) {
-        const { proteinCount, carbohydrateCount, lipidCount, calorieCount } = keyData;
 
-        this.firstName = userInfos.firstName;
-        this.protein = proteinCount;
-        this.carbohydrate = carbohydrateCount;
-        this.lipid = lipidCount;
-        this.calorie = calorieCount;
-        this.userActivity = userActivity.sessions;
-        this.userAverageSessions = userAverageSessions.sessions;
-        this.userPerformance = userPerformance.data || userPerformance;
-        this.userScore = score || todayScore;
-        
+    constructor(userInfos, activity, averageSessions, performance) {
+        this.firstName = userInfos.userInfos.firstName;
+        this.protein = userInfos.keyData.proteinCount;
+        this.carbohydrate = userInfos.keyData.carbohydrateCount;
+        this.lipid = userInfos.keyData.lipidCount;
+        this.calorie = userInfos.keyData.calorieCount;
+        this.userActivity = activity.sessions;
+        this.userAverageSessions = averageSessions.sessions;
+        this.userPerformance = performance.data || performance;
+        this.userScore = parseInt((userInfos.score || userInfos.todayScore) * 100, 10);
+        console.log('userScore :', this.userScore);
     }
 }
 
 export default ProfilModel;
+
