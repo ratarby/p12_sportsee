@@ -3,6 +3,17 @@ import { Container, Title, Text, Score } from "../styles/scoreChartStyle";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 
 export default function ScoreChart({ userScore }) {
+  const data = [
+    {
+
+      uv: (100 - userScore) + userScore,
+      fill: "#FF0000", display: "none",
+    },
+    {
+      uv:  userScore ,
+      fill: "#FF0000",
+    }
+  ]
   return (
     <Container>
       <Title>Score</Title>
@@ -17,26 +28,22 @@ export default function ScoreChart({ userScore }) {
           outerRadius={150}
           startAngle={90}
           endAngle={450}
-          barSize={15}
-          data={ userScore }
+          barSize={10}
+          data={ data }
         >
           <RadialBar
-            minAngle={15}
-            label={{fill: 'black', fontSize: 26 , fontWeight: 600, position: 'centerBottom', dx: -13, dy: -18 }}
-            // background={{ fill: '#fbfbfb' }}
-            // background={{  fill: 'white' }}
+            label={{ fill: 'black', fontSize: 26, fontWeight: 600, position: 'centerBottom', dx: -13, dy: -18 }}
+            //background
             clockWise
-            dataKey="value"            
+            dataKey='uv' 
             cornerRadius={10}
-            fill="#FF0000"
-          />
-          
+            />
         </RadialBarChart>
       </ResponsiveContainer>
-        <Text> 
-          <Score>%</Score> 
-        <br/>de votre<br/> objectif 
-        </Text>
+      <Text>
+        <Score>%</Score>
+        <br />de votre<br /> objectif
+      </Text>
     </Container>
   );
 }

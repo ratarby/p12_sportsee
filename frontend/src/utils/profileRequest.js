@@ -23,9 +23,7 @@ async function getInfos(id) {
         const dataResponse = await axios.get(`http://localhost:3000/user/${id}`);
         if (dataResponse.status === 200) {
             result = dataResponse.data.data ;
-            // display user infos from front end 
             
-            // display user infos from backend
         }
     }
     return result === undefined ? null : result;
