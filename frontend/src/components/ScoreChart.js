@@ -5,7 +5,6 @@ import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 export default function ScoreChart({ userScore }) {
   const data = [
     {
-
       uv: (100 - userScore) + userScore,
       fill: "#FF0000", display: "none",
     },

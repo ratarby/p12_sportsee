@@ -30,7 +30,8 @@ export default function User() {
 
   if (!profile) {
     return <Error />;
-  } 
+  }
+   
 // console.log('profile :', profile, profile.userScore);
   return (
     <Main>
