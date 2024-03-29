@@ -9,7 +9,7 @@ class ProfilModel {
         this.userActivity = activity.sessions;
         this.userAverageSessions = averageSessions.sessions;
         this.userPerformance = performance.data || performance;
-        this.userScore = parseInt((userInfos.score || userInfos.todayScore) * 100, 10);
+        this.userScore = Math.round(((userInfos.score || userInfos.todayScore)*100),2);
         // console.log('userScore :', this.userScore);
     }
 }
