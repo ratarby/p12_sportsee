@@ -4,6 +4,11 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
 
+/**
+ * Renders the header component of the application.
+ *
+ * @return {JSX.Element} The header component.
+ */
 export default function Header() {
     
   return (

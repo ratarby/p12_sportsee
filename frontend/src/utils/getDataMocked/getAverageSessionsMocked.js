@@ -1,5 +1,11 @@
 import { USER_AVERAGE_SESSIONS } from "../../mock/dataMocked";
 
+/**
+ * Retrieves the average sessions for a user based on the provided id.
+ *
+ * @param {number} id - The user id to retrieve average sessions for
+ * @return {object | undefined} The user's average sessions, or undefined if the user or session data is missing or invalid
+ */
 export const getAverageSessionsMocked = (id) => {
     try {
         const userAverageSessions = USER_AVERAGE_SESSIONS.find((session) => session.userId === id);

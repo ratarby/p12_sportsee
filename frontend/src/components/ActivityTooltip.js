@@ -2,14 +2,12 @@ import React from 'react';
 import { Container, Text } from "../styles/activityToolTypeStyle";
 
 
-
-
 /**
- * A function that renders the ActivityToolType component based on the 'active' prop and displays the payload values.
+ * Renders a tooltip component for displaying activity data.
  *
- * @param {boolean} active - indicates if the component should be active
- * @param {object} payload - an object containing values to be displayed
- * @return {JSX.Element} the rendered component or null if 'active' is false
+ * @param {boolean} active - Indicates whether the tooltip is active or not.
+ * @param {Array} payload - An array containing the payload data for the tooltip.
+ * @return {JSX.Element|null} The rendered tooltip component or null if the tooltip is not active.
  */
 export default function ActivityTooltip({ active, payload }) {
     if (active) {

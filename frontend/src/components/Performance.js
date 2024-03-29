@@ -4,6 +4,15 @@ import {
 } from 'recharts';
 import { Container } from '../styles/performanceStyle';
 
+/**
+ * Renders a performance chart using the provided user performance data.
+ *
+ * @param {Object} props - The props object containing the user performance data.
+ * @param {Array} props.userPerformance - An array of objects representing the user's performance data.
+ * @param {string} props.userPerformance[].kind - The kind of performance data.
+ * @param {number} props.userPerformance[].value - The value of the performance data.
+ * @return {JSX.Element} The rendered performance chart component.
+ */
 export default function Performance({ userPerformance }) {
     return (
         <Container>

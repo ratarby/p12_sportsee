@@ -8,6 +8,12 @@ import ActivityTooltip from './ActivityTooltip';
 
 
 
+/**
+ * Renders a Bar Chart component displaying user activity data.
+ *
+ * @param {Object} userActivity - The user activity data to be displayed on the chart.
+ * @return {JSX.Element} The rendered Bar Charts component.
+ */
 export default function BarCharts({ userActivity }) {
     return (
         <Wrapper>

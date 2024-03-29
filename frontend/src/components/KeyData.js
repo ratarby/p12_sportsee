@@ -1,13 +1,15 @@
 import React from 'react';
 import { Wrapper, Infos, InfosData, InfosText } from "../styles/keyDataStyle";
 
+
 /**
- * Renders the KeyData component with the specified icon, infos, and text.
+ * Renders a component that displays key data with an icon, user information, and text.
  *
- * @param {Object} icon - The icon to be displayed
- * @param {string} infos - The information to be displayed
- * @param {string} text - The text to be displayed
- * @return {JSX.Element} The KeyData component
+ * @param {Object} props - The props object containing the following properties:
+ *   - {string} icon - The URL of the icon to display.
+ *   - {string} userInfos - The user information to display.
+ *   - {string} text - The text to display.
+ * @return {JSX.Element} The rendered component.
  */
 export default function KeyData({ icon, userInfos, text }) {
     return (

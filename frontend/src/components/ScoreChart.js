@@ -2,6 +2,12 @@ import React from "react";
 import { Container, Title, Text, Score } from "../styles/scoreChartStyle";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 
+/**
+ * Generates a score chart based on the user's score.
+ *
+ * @param {Object} userScore - The user's score used to generate the chart.
+ * @return {JSX.Element} The JSX element representing the score chart.
+ */
 export default function ScoreChart({ userScore }) {
   const data = [
     {

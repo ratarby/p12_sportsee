@@ -4,6 +4,13 @@ import { Infos } from "../styles/infosStyle";
 
 
 
+/**
+ * Renders the user information component.
+ *
+ * @param {object} props - The props object containing the firstName property.
+ * @param {string} props.firstName - The first name of the user.
+ * @return {JSX.Element} The rendered user information component.
+ */
 export default function UserInfos({firstName}) {
   return (
         <Head>

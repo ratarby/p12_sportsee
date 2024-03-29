@@ -1,6 +1,5 @@
 
 class ProfilModel {
-
     constructor(userInfos, activity, averageSessions, performance) {
         this.firstName = userInfos.userInfos.firstName;
         this.protein = userInfos.keyData.proteinCount;
@@ -11,7 +10,7 @@ class ProfilModel {
         this.userAverageSessions = averageSessions.sessions;
         this.userPerformance = performance.data || performance;
         this.userScore = parseInt((userInfos.score || userInfos.todayScore) * 100, 10);
-        console.log('userScore :', this.userScore);
+        // console.log('userScore :', this.userScore);
     }
 }
 

@@ -7,6 +7,12 @@ import { Container, Title } from "../styles/userAverageSessionStyle";
 import CustomCursor from './CustomCursor';
 
 
+/**
+ * Renders the average sessions component with the given user average sessions data.
+ *
+ * @param {object} userAverageSessions - the user's average session data
+ * @return {JSX.Element} the rendered average sessions component
+ */
 export default function AverageSessions({ userAverageSessions }) {
     return (
         <Container>

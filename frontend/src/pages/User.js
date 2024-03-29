@@ -19,20 +19,18 @@ export default function User() {
   const { id } = useParams();
 
   useEffect(() => {
-    
     const fetchProfile = async (id) => {
       const profileData = await getProfil(id);
       setProfile(profileData);
     };
-      fetchProfile(id);
+    fetchProfile(id);
   }, [id]);
-    
-
-  if (!profile) {
+  
+if (!profile) {
     return <Error />;
   }
-   
-// console.log('profile :', profile, profile.userScore);
+
+  console.log('profile :', profile);
   return (
     <Main>
       <Container>
@@ -43,7 +41,7 @@ export default function User() {
             <BottomChart>
               <AverageSessions userAverageSessions={profile.userAverageSessions} />
               <Performance userPerformance={profile.userPerformance} />
-              <ScoreChart userScore={ profile.userScore }  />
+              <ScoreChart userScore={profile.userScore}  />
             </BottomChart>
           </section>
           <aside>

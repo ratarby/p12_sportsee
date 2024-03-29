@@ -6,6 +6,11 @@ import iconDumbBell from "../assets/iconDumbBell.svg";
 import { NavLink } from "react-router-dom";
 import { Container, Nav, Wrapper, NavText } from "../styles/sideBarStyle";
 
+/**
+ * Renders the SideBar component.
+ *
+ * @return {JSX.Element} The SideBar component.
+ */
 export default function SideBar(){
   return (
     <Container>

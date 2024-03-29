@@ -7,28 +7,36 @@ import axios from "axios";
 
 
 // false = api call , true = mock data
-let isMockData = false;
+let isMockData = true;
 
 
 
+/**
+ * Retrieves information about a user with the specified ID.
+ *
+ * @param {number} id - The ID of the user.
+ * @return {Promise<object|null>} The user information if found, otherwise null.
+ */
 async function getInfos(id) {
     let result;
-
-
-
     if (isMockData === true) {
         return getInfosMocked(id);
     } else {
         // Endpoint
         const dataResponse = await axios.get(`http://localhost:3000/user/${id}`);
         if (dataResponse.status === 200) {
-            result = dataResponse.data.data ;
-            
+            result = dataResponse.data.data; ;
         }
     }
     return result === undefined ? null : result;
 }
 
+/**
+ * Function to retrieve activity based on ID.
+ *
+ * @param {number} id - The ID of the activity to retrieve
+ * @return {Promise<object|null>} The retrieved activity data, or null if not found
+ */
 async function getActivity(id) {
     let result;
 
@@ -50,6 +58,12 @@ async function getActivity(id) {
 }
 
 
+/**
+ * Asynchronously retrieves the average sessions data for a user from the backend.
+ *
+ * @param {string} id - The ID of the user for which to retrieve the average sessions data.
+ * @return {Object|null} The average sessions data for the user, or null if the data is undefined.
+ */
 async function getAverageSessions(id) {
     let result;
 
@@ -70,6 +84,12 @@ async function getAverageSessions(id) {
 }
 
 
+/**
+ * Retrieves the performance data for a given user ID.
+ *
+ * @param {number} id - The ID of the user.
+ * @return {Promise<object|null>} The performance data for the user, or null if no data is found.
+ */
 async function getPerformance(id) {
     let result;
 
@@ -94,6 +114,12 @@ async function getPerformance(id) {
 }
 
 
+/**
+ * Retrieves user profile information including infos, activity, average sessions, and performance.
+ *
+ * @param {number} id - The user ID to retrieve profile information 
+ * @return {ProfilModel} The user's profile model with infos, activity, average sessions, and performance
+ */
 async function getProfil(id) {
     const idInt = parseInt(id, 10);
     // console.log('idInt :', idInt);
@@ -102,7 +128,9 @@ async function getProfil(id) {
     const userActivity = await getActivity(idInt)
     // console.log('userActivity :', userActivity);
     const userAverageSessions = await getAverageSessions(idInt);
+    // console.log('userAverageSessions :', userAverageSessions);
     const userPerformance = await getPerformance(idInt);
+    // console.log('userPerformance :', userPerformance);
 
 
 
