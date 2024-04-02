@@ -7,7 +7,7 @@ import axios from "axios";
 
 
 // false = api call , true = mock data
-let isMockData = false;
+let isMockData = true;
 
 
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getProfil } from '../utils/profileRequest';
 import { Main, Container, Content, BottomChart } from '../styles/userStyle';
 import KeyData from '../components/KeyData';
@@ -8,29 +8,31 @@ import proteinesIcon from '../assets/proteinesIcon.svg';
 import carbohydrateIcon from '../assets/carbohydrateIcon.svg';
 import lipidIcon from '../assets/lipidIcon.svg';
 import UserInfos from '../components/UserInfos';
-import Error from '../pages/Error';
 import BarChart from '../components/BarChart';
 import AverageSessions from '../components/AverageSessions';
 import Performance from '../components/Performance';
 import ScoreChart from '../components/ScoreChart';
 
 export default function User() {
-  const [profile, setProfile] = useState(null);
+  const [profile, setProfile] = useState();
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProfile = async (id) => {
       const profileData = await getProfil(id);
       setProfile(profileData);
+      if (!profileData) {
+        navigate('/error');
+      }
     };
     fetchProfile(id);
-  }, [id]);
-  
-if (!profile) {
-    return <Error />;
-  }
+  }, [id, navigate]);
 
+  
+  
   console.log('profile :', profile);
+
   return (
     <Main>
       <Container>
