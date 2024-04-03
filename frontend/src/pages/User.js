@@ -13,6 +13,14 @@ import AverageSessions from "../components/AverageSessions";
 import Performance from "../components/Performance";
 import ScoreChart from "../components/ScoreChart";
 
+
+/**
+ * Fetches user profile data and displays it on the user interface.
+ *
+ * @param {string} id - The ID of the user
+ * @param {function} navigate - Function to navigate to different pages
+ * @return {JSX.Element} The user interface displaying the user profile data
+ */
 export default function User() {
   const [profile, setProfile] = useState('');
   const { id } = useParams();
