@@ -1,49 +1,47 @@
-import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
-import { getProfil } from '../utils/profileRequest';
-import { Main, Container, Content, BottomChart } from '../styles/userStyle';
-import KeyData from '../components/KeyData';
-import caloriesIcon from '../assets/caloriesIcon.svg';
-import proteinesIcon from '../assets/proteinesIcon.svg';
-import carbohydrateIcon from '../assets/carbohydrateIcon.svg';
-import lipidIcon from '../assets/lipidIcon.svg';
-import UserInfos from '../components/UserInfos';
-import BarChart from '../components/BarChart';
-import AverageSessions from '../components/AverageSessions';
-import Performance from '../components/Performance';
-import ScoreChart from '../components/ScoreChart';
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { getProfil } from "../utils/profileRequest";
+import { Main, Container, Content, BottomChart } from "../styles/userStyle";
+import KeyData from "../components/KeyData";
+import caloriesIcon from "../assets/caloriesIcon.svg";
+import proteinesIcon from "../assets/proteinesIcon.svg";
+import carbohydrateIcon from "../assets/carbohydrateIcon.svg";
+import lipidIcon from "../assets/lipidIcon.svg";
+import UserInfos from "../components/UserInfos";
+import BarChart from "../components/BarChart";
+import AverageSessions from "../components/AverageSessions";
+import Performance from "../components/Performance";
+import ScoreChart from "../components/ScoreChart";
 
 export default function User() {
-  const [profile, setProfile] = useState();
+  const [profile, setProfile] = useState('');
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchProfile = async (id) => {
-      const profileData = await getProfil(id);
-      setProfile(profileData);
-      if (!profileData) {
-        navigate('/error');
-      }
+    const fetchProfile = async () => {
+        const profileData = await getProfil(id);
+        if(!profileData) {
+          navigate('/error');
+        }
+        setProfile(profileData);
     };
-    fetchProfile(id);
+    fetchProfile();
   }, [id, navigate]);
 
-  
-  
-  console.log('profile :', profile);
-
   return (
-    <Main>
+    (profile && <Main>
       <Container>
         <UserInfos firstName={profile.firstName} />
         <Content>
           <section>
             <BarChart userActivity={profile.userActivity} />
             <BottomChart>
-              <AverageSessions userAverageSessions={profile.userAverageSessions} />
+              <AverageSessions
+                userAverageSessions={profile.userAverageSessions}
+              />
               <Performance userPerformance={profile.userPerformance} />
-              <ScoreChart userScore={profile.userScore}  />
+              <ScoreChart userScore={profile.userScore} />
             </BottomChart>
           </section>
           <aside>
@@ -75,10 +73,6 @@ export default function User() {
         </Content>
       </Container>
     </Main>
+  )
   );
 }
-
-
-
-
-

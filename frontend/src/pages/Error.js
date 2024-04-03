@@ -4,15 +4,15 @@ import { Main, Title } from "../styles/errorStyle";
 
 
 const Error = () => {
-    
-    return (
-        <Main>
-            <Title>404</Title>
-                <p>Oups ! La page que vous demandez n'existe pas.</p>
-            <Link to='/'>Retourner sur la page d’accueil</Link>
-        </Main>
-    )
-}
+        return (
+            <Main>
+                <Title>404</Title>
+                <p>Oups! La page que vous demandez n'existe pas</p>
+                <Link to='/'>Retourner sur la page d'accueil</Link>
+            </Main>
+        )
+    }
+
 
 
 export default Error
