@@ -28,11 +28,15 @@ export default function User() {
 
   useEffect(() => {
     const fetchProfile = async () => {
+      try {
         const profileData = await getProfil(id);
         if(!profileData) {
           navigate('/error');
         }
         setProfile(profileData);
+      } catch (error) {
+        navigate('/error');
+      }
     };
     fetchProfile();
   }, [id, navigate]);
