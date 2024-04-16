@@ -67,19 +67,19 @@ export default function User() {
               key={profile.protein}
               icon={proteinesIcon}
               userInfos={`${profile.protein}g`}
-              text="Protein"
+              text="Proteines"
             />
             <KeyData
               key={profile.carbohydrate}
               icon={carbohydrateIcon}
               userInfos={`${profile.carbohydrate}g`}
-              text="Carbohydrates"
+              text="Glucides"
             />
             <KeyData
               key={profile.lipid}
               icon={lipidIcon}
               userInfos={`${profile.lipid}g`}
-              text="Lipids"
+              text="Lipides"
             />
           </aside>
         </Content>

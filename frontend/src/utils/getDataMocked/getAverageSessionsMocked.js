@@ -17,7 +17,6 @@ export const getAverageSessionsMocked = (id) => {
             session.day = ["L", "M", "M", "J", "V", "S", "D"][i];
         });
 
-        // console.log('userAverageSessions', userAverageSessions.sessions);
         return userAverageSessions;
         
     } catch (error) {
@@ -25,4 +24,4 @@ export const getAverageSessionsMocked = (id) => {
     }
 };
 
-// console.log(getAverageSessionsMocked(12));
+// console.log('average sessions', getAverageSessionsMocked(12));

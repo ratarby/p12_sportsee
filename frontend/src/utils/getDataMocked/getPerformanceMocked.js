@@ -22,9 +22,9 @@ export const getPerformanceMocked = (id) => {
             userPerformance.data.reverse();
         }
 
-        // console.log(userPerformance.data);
         return userPerformance.data;
     } catch (error) {
         console.error(error);
     }
 };
+// console.log('performances', getPerformanceMocked(12));

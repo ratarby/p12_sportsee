@@ -18,10 +18,11 @@ export const getActivityMocked = (id) => {
             session.day =  i + 1;
         });
         
-        // console.log('userActivity :',userActivity.sessions);
         return userActivity;
     } catch (error) {
         console.error(error);
     }
 };
+// console.log('activity', getActivityMocked(12));
+
 
