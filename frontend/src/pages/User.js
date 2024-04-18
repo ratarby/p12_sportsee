@@ -39,7 +39,8 @@ export default function User() {
       }
     };
     fetchProfile();
-  }, [id, navigate]);
+    /* eslint-disable */
+  }, []);
 
   return (
     (profile && <Main>

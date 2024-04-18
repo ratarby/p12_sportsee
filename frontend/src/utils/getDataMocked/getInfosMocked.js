@@ -35,4 +35,4 @@ export const getInfosMocked = (id) => {
     }
     
 };
-console.log('user infos', getInfosMocked(12));
+// console.log('user infos', getInfosMocked(12));
